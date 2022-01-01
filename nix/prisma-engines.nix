@@ -1,4 +1,4 @@
-{ version, hash, cargoSha256 }:
+{ version, source, cargoSha256 }:
 { makeRustPlatform
 , fenix
 , fetchFromGitHub
@@ -18,13 +18,7 @@ rustPlatform.buildRustPackage rec {
   inherit version;
 
   pname = "prisma-engines";
-
-  src = fetchFromGitHub {
-    owner = "prisma";
-    repo = "prisma-engines";
-    rev = version;
-    sha256 = hash;
-  };
+  src = source;
 
   OPENSSL_NO_VENDOR = 1;
 

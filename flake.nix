@@ -18,9 +18,19 @@
       url = "github:nmattia/naersk";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    source-2-30-2 = {
+      url = "github:prisma/prisma-engines/2.30.2";
+      flake = false;
+    };
+
+    source-3-7-0 = {
+      url = "github:prisma/prisma-engines/3.7.0";
+      flake = false;
+    };
   };
 
-  outputs = { self, nixpkgs, flake-utils, naersk, nix-utils, fenix }:
+  outputs = { self, nixpkgs, flake-utils, naersk, nix-utils, fenix, ... }@inputs:
     let
       inherit (builtins) attrNames attrValues;
       inherit (nixpkgs.lib) getAttrs;
@@ -33,9 +43,14 @@
       };
       derivations = {
         prisma-engines-2-30-2 = import ./nix/prisma-engines.nix {
+          source = inputs.source-2-30-2;
           version = "2.30.2";
-          hash = "1890yffp876nh892i80cyn6ls4sd9d92n09pfbqypvfy7c9akpyz";
           cargoSha256 = "sha256-X5qE/jg8vzsnLob7i0nifNzAvvr9cIBh5gl6wW9PIkw=";
+        };
+        prisma-engines-3-7-0 = import ./nix/prisma-engines.nix {
+          source = inputs.source-3-7-0;
+          version = "3.7.0";
+          cargoSha256 = "sha256-todo/jg8vzsnLob7i0nifNzAvvr9cIBh5gl6wW9PIkw=";
         };
       };
     in
