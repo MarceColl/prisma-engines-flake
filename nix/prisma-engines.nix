@@ -50,7 +50,7 @@ rustPlatform.buildRustPackage rec {
 
   cargoBuildFlags = "-p query-engine -p query-engine-node-api -p migration-engine-cli -p introspection-core -p prisma-fmt";
 
-  postInstal = ''
+  postInstall = ''
     mv $out/lib/libquery_engine.so $out/lib/libquery_engine.node
   '';
 
