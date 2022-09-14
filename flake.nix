@@ -73,7 +73,7 @@
         rec {
           packages = getAttrs packageNames pkgs;
 
-          defaultPackage = packages.prisma-engines-2-30-2;
+          defaultPackage = packages.prisma-engines-4-3-1;
 
           devShell =
             let
