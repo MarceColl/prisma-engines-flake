@@ -50,7 +50,7 @@
         prisma-engines-4-3-1 = import ./nix/prisma-engines.nix {
           source = inputs.source-4-3-1;
           version = "4.3.1";
-          cargoSha256 = "sha256-todo/jg8vzsnLob7i0nifNzAvvr9cIBh5gl6wW9PIkw=";
+          cargoSha256 = "sha256-GycZhxXTJH/Jg5W5mTrCgaQyeiFi/PEcTHXtGnW8Ygs=";
         };
       };
     in
