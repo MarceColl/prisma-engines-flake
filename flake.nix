@@ -25,7 +25,7 @@
     };
 
     source-4-3-1 = {
-      url = "github:prisma/prisma-engines/4.3.1";
+      url = "github:prisma/prisma-engines/4.3.0";
       flake = false;
     };
   };
